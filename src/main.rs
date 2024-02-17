@@ -36,10 +36,13 @@ fn main() -> Result<()> {
     println!("Sensor init");
 
     loop {
-        println!("foo");
         let device_id = sensor.read_device_id_register()?;
 
         println!("Hello, world, I am sensor {:#02x}", device_id);
+
+        let measurements = sensor.measure()?;
+
+        println!("{}", measurements);
 
         FreeRtos.delay_ms(500u32);
     }
