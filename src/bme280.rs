@@ -187,12 +187,12 @@ impl CalibrationData {
             dig_P8: concat_bytes!(i16, input, 20),
             dig_P9: concat_bytes!(i16, input, 22),
 
-            dig_H1: input[24],
-            dig_H2: concat_bytes!(i16, input, 25),
-            dig_H3: input[27],
-            dig_H4: (input[28] as i16) << 4 | (input[29] as i16) & 0b1111,
-            dig_H5: (input[29] as i16) >> 4 | (input[30] as i16),
-            dig_H6: input[31] as i8,
+            dig_H1: input[25],
+            dig_H2: concat_bytes!(i16, input, 26),
+            dig_H3: input[28],
+            dig_H4: (input[29] as i16) << 4 | (input[30] as i16) & 0b1111,
+            dig_H5: (input[30] as i16) >> 4 | (input[31] as i16) << 4,
+            dig_H6: input[32] as i8,
 
             t_fine: 0,
         };
