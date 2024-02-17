@@ -8,10 +8,8 @@ use esp_idf_svc::hal::{
     peripherals::Peripherals,
     prelude::*,
 };
-
-pub mod bme280;
-
-use crate::bme280::*;
+mod bme280;
+use bme280::*;
 
 fn main() -> Result<()> {
     // It is necessary to call this function once. Otherwise some patches to the runtime
